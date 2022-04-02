@@ -14,4 +14,9 @@ resource "aws_sagemaker_notebook_instance" "default" {
   volume_size             = 10
   role_arn                = "arn:aws:iam::909172569716:role/sm_notebook_role"
   default_code_repository = aws_sagemaker_code_repository.ml-job.code_repository_name
+
+  tags = {
+    Name = "ml-job-instance"
+  }
+
 }
