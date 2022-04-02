@@ -1,3 +1,22 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.8.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-west-1"
+}
+
+
+variable "sagemaker_notebook_name" {
+  default = "ml-job-instance"
+}
+
+
 resource "aws_sagemaker_code_repository" "ml-job" {
   code_repository_name = "ml-source-code"
 
